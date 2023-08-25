@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testando Streaming</title>
+</head>
+<body>
+
+  <h2>Testando Streaming</h2>
+
+  <video id="videoplayer" controls>
+    <source src="/episodes/stream?videoUrl=videos/course-19/sidebar.mp4&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZmlyc3ROYW1lIjoiR2FicmllbCIsImVtYWlsIjoiR2FicmllbEBnbWFpbC5jb20iLCJpYXQiOjE2OTI2NTY5NjQsImV4cCI6MTY5Mjc0MzM2NH0.-tp9LcnMLWeuFMfBGEeAJW2iZok-TR9aw_OUHYH962E" type="video/mp4">
+  </video>
+
+  <button id="playButton">Reproduzir</button>
+
+  <script>
+    var myvideo = document.getElementById('videoplayer');
+    var playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', function() {
+      myvideo.currentTime = 10;
+      myvideo.play();
+    });
+  </script>
+</body>
+</html>
