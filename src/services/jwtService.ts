@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
+import { JWT_KEY } from '../config/environments';
 
-const secret = 'chave'
 
 export const jwtService = {
   signgetToken : (payload : string | object | Buffer , expiration : string) => {
-    return jwt.sign(payload,secret,{
+    return jwt.sign(payload,JWT_KEY,{
       expiresIn: expiration
     })
   } ,
@@ -12,7 +12,7 @@ export const jwtService = {
     token:string,
     callbackfn:jwt.VerifyCallback
   ) => {
-    jwt.verify(token,secret,callbackfn)
+    jwt.verify(token,JWT_KEY,callbackfn)
   }
 
 }
